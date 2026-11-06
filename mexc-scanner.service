@@ -1,0 +1,17 @@
+[Unit]
+Description=MEXC Pre-Pump Institutional 4h Scanner Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/mexc-pre-pump-scanner
+ExecStart=/opt/mexc-pre-pump-scanner/venv/bin/python daemon.py --interval 900
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/mexc-pre-pump-scanner/logs/systemd.log
+StandardError=append:/opt/mexc-pre-pump-scanner/logs/systemd_err.log
+EnvironmentFile=-/opt/mexc-pre-pump-scanner/.env
+
+[Install]
+WantedBy=multi-user.target

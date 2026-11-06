@@ -1,0 +1,19 @@
+# Environments & Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Data & SQLite Databases
+data/*.db
+data/*.sqlite3
+data/*.csv
+
+# Log Files
+logs/
+*.log
+
+# OS Metadata
+.DS_Store
+Thumbs.db
